@@ -128,7 +128,7 @@ const cards = [
               </div>
               <p
                 :class="card.read ? 'text-neutral-900' : 'text-neutral-100'"
-                class="font-semibold text-sm"
+                class="font-semibold text-sm line-clamp-2"
                 style="word-spacing: -4px"
               >
                 {{ card.text }}
