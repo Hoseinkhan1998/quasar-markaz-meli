@@ -13,6 +13,7 @@ import Allocations from '../pages/Allocations.vue'
 import Contracts from '../pages/Contracts.vue'
 import Payment from '../pages/Payment.vue'
 import AnnouncementManager from '../pages/AnnouncementManager.vue'
+import Login from '../pages/Login.vue'
 
 const routes = [
   { path: '/', component: HomePage, name: 'home' },
@@ -29,6 +30,7 @@ const routes = [
   { path: '/contracts', component: Contracts, name: 'contracts' },
   { path: '/payment', component: Payment, name: 'payment' },
   { path: '/announcementManager', component: AnnouncementManager, name: 'announcementManager' },
+  { path: '/login', component: Login, name: 'login' },
 ]
 
 const router = createRouter({
