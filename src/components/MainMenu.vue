@@ -2,6 +2,70 @@
 import { useRoute } from 'vue-router'
 const route = useRoute()
 
+import { ref, onMounted, onUnmounted, watch } from 'vue'
+
+const scrollContainer = ref(null)
+const showTopButton = ref(false)
+const showBottomButton = ref(true)
+let scrollInterval = null
+const scrollSpeed = 5 // سرعت اسکرول (پیکسل در هر فریم)
+
+// رصد موقعیت اسکرول برای نمایش/مخفی کردن دکمه‌ها
+const checkScrollPosition = () => {
+  if (scrollContainer.value) {
+    const { scrollTop, scrollHeight, clientHeight } = scrollContainer.value
+    showTopButton.value = scrollTop > 0 // دکمه بالا فقط وقتی اسکرول از بالا فاصله دارد نمایش داده شود
+    showBottomButton.value = scrollTop + clientHeight < scrollHeight - 1 // دکمه پایین وقتی به انتها رسید مخفی شود
+  }
+}
+
+// اسکرول خودکار به سمت پایین
+const startScrollDown = () => {
+  stopScroll()
+  scrollInterval = setInterval(() => {
+    if (scrollContainer.value) {
+      scrollContainer.value.scrollBy({ top: scrollSpeed, behavior: 'smooth' })
+    }
+  }, 16)
+}
+
+// اسکرول خودکار به سمت بالا
+const startScrollUp = () => {
+  stopScroll()
+  scrollInterval = setInterval(() => {
+    if (scrollContainer.value) {
+      scrollContainer.value.scrollBy({ top: -scrollSpeed, behavior: 'smooth' })
+    }
+  }, 16)
+}
+
+// توقف اسکرول
+const stopScroll = () => {
+  if (scrollInterval) {
+    clearInterval(scrollInterval)
+    scrollInterval = null
+  }
+}
+
+// رصد تغییرات اسکرول
+onMounted(() => {
+  if (scrollContainer.value) {
+    scrollContainer.value.addEventListener('scroll', checkScrollPosition)
+  }
+})
+
+onUnmounted(() => {
+  if (scrollContainer.value) {
+    scrollContainer.value.removeEventListener('scroll', checkScrollPosition)
+  }
+  stopScroll()
+})
+
+// بررسی اولیه موقعیت اسکرول
+watch(scrollContainer, () => {
+  checkScrollPosition()
+})
+
 const items = [
   {
     icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,64 +260,76 @@ const items = [
   },
 ]
 </script>
+
 <template>
-  <div
-    class="flex flex-col bg-menu text-neutral-100 text-lg font-semibold h-full overflow-y-auto pt-10"
-  >
-    <!-- menu image -->
-    <div class="px-3">
-      <div class="flex justify-center mb-3 border-b-2 pb-5 border-neutral-400 border-solid">
-        <img src="/images/markazmenu.png" class="w-9/12" alt="" />
+  <div class="!flex !flex-col relative">
+    <!-- top button -->
+    <div v-show="showTopButton" class=" sticky top-0 z-10">
+      <div
+        class="!flex !cursor-pointer text-neutral-100 !items-center bg-neutral-700 !justify-center rounded-lg border-2 border-neutral-400 border-solid mb-3"
+        @mouseenter="startScrollUp"
+        @mouseleave="stopScroll"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 !cursor-pointer"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
       </div>
     </div>
-    <!-- home -->
-    <div v-for="item in items" :key="item.label">
-      <router-link
-        :to="item.route"
-        :class="[item.route === route.path ? 'bg-[#16133f]' : '']"
-        class="flex py-2 items-center justify-between cursor-pointer transition-all duration-150 hover:bg-neutral-400 px-3"
-      >
-        <div class="flex items-center gap-3">
-          <span v-html="item.icon"></span>
-          <p class="text-sm">{{ item.label }}</p>
-        </div>
-        <div
-          class="rounded-full w-3 h-3 blinking"
-          v-if="item.label === 'وظایف' || item.label === 'کارآیی' || item.label === 'قراردادها'"
-        ></div>
-      </router-link>
+
+    <!-- scrollable content -->
+    <div
+      ref="scrollContainer"
+      class="!flex !flex-col max-h-[60vh] text-neutral-100 text-lg font-semibold overflow-y-auto"
+    >
+      <!-- icons -->
+      <div class="!flex !flex-col !gap-3" v-for="item in items" :key="item.label">
+        <router-link
+          :to="item.route"
+          :class="[item.route === route.path ? ' text-red-700' : '']"
+          class="cursor-pointer mt-3"
+        >
+          <div class="!flex !flex-col justify-center items-center gap-3">
+            <span v-html="item.icon"></span>
+            <p class="text-xs">{{ item.label }}</p>
+          </div>
+        </router-link>
+      </div>
+    </div>
+
+    <!-- bottom button -->
+    <div v-show="showBottomButton" class=" sticky bottom-0 z-10">
       <div
-        v-if="item.label === 'کارآیی' || item.label === 'تخصیص ها' || item.label === 'پرداخت'"
-        class="w-4/6 h-[1px] ms-10 bg-neutral-100"
-      ></div>
+        class="!flex !cursor-pointer text-neutral-100 !items-center bg-neutral-700 !justify-center rounded-lg border-2 border-neutral-400 border-solid mt-3"
+        @mouseenter="startScrollDown"
+        @mouseleave="stopScroll"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </div>
     </div>
   </div>
 </template>
-
 <style scoped>
-.bg-menu {
-  background: #1813b9;
-  background: linear-gradient(
-    180deg,
-    rgb(27, 24, 109) 53%,
-    rgb(16, 13, 82) 69%,
-    rgb(11, 9, 49) 92%
-  );
+.overflow-y-auto {
+  scrollbar-width: none; /* برای فایرفاکس */
 }
 
-@keyframes blink {
-  0% {
-    background-color: #c6cb2d; /* قرمز روشن */
-  }
-  50% {
-    background-color: #c6cb2d8f; /* قرمز تیره */
-  }
-  100% {
-    background-color: #c6cb2d; /* قرمز روشن */
-  }
-}
-
-.blinking {
-  animation: blink 1s infinite; /* زمان و تعداد تکرار انیمیشن */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none; /* برای کروم، سافاری و سایر مرورگرهای مبتنی بر Webkit */
 }
 </style>

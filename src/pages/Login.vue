@@ -100,7 +100,7 @@ const togglePasswordVisibility = () => {
           </button>
         </template>
       </q-input>
-      <div class="flex justify-center items-center my-3 text-xl">cpaptcha</div>
+      <!-- <div class="flex justify-center items-center my-3 text-xl">cpaptcha</div> -->
       <div class="flex justify-end">
         <div
           class="flex px-5 py-2 text-[16px] text-neutral-100 font-medium justify-center items-center rounded-3xl cursor-pointer bg-primarymain hover:bg-secondarymain"
