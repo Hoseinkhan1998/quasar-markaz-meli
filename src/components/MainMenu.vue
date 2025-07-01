@@ -1,70 +1,8 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import Arrowdown from './Arrowdown.vue'
 const route = useRoute()
-
-import { ref, onMounted, onUnmounted, watch } from 'vue'
-
-const scrollContainer = ref(null)
-const showTopButton = ref(false)
-const showBottomButton = ref(true)
-let scrollInterval = null
-const scrollSpeed = 5 // سرعت اسکرول (پیکسل در هر فریم)
-
-// رصد موقعیت اسکرول برای نمایش/مخفی کردن دکمه‌ها
-const checkScrollPosition = () => {
-  if (scrollContainer.value) {
-    const { scrollTop, scrollHeight, clientHeight } = scrollContainer.value
-    showTopButton.value = scrollTop > 0 // دکمه بالا فقط وقتی اسکرول از بالا فاصله دارد نمایش داده شود
-    showBottomButton.value = scrollTop + clientHeight < scrollHeight - 1 // دکمه پایین وقتی به انتها رسید مخفی شود
-  }
-}
-
-// اسکرول خودکار به سمت پایین
-const startScrollDown = () => {
-  stopScroll()
-  scrollInterval = setInterval(() => {
-    if (scrollContainer.value) {
-      scrollContainer.value.scrollBy({ top: scrollSpeed, behavior: 'smooth' })
-    }
-  }, 16)
-}
-
-// اسکرول خودکار به سمت بالا
-const startScrollUp = () => {
-  stopScroll()
-  scrollInterval = setInterval(() => {
-    if (scrollContainer.value) {
-      scrollContainer.value.scrollBy({ top: -scrollSpeed, behavior: 'smooth' })
-    }
-  }, 16)
-}
-
-// توقف اسکرول
-const stopScroll = () => {
-  if (scrollInterval) {
-    clearInterval(scrollInterval)
-    scrollInterval = null
-  }
-}
-
-// رصد تغییرات اسکرول
-onMounted(() => {
-  if (scrollContainer.value) {
-    scrollContainer.value.addEventListener('scroll', checkScrollPosition)
-  }
-})
-
-onUnmounted(() => {
-  if (scrollContainer.value) {
-    scrollContainer.value.removeEventListener('scroll', checkScrollPosition)
-  }
-  stopScroll()
-})
-
-// بررسی اولیه موقعیت اسکرول
-watch(scrollContainer, () => {
-  checkScrollPosition()
-})
 
 const items = [
   {
@@ -259,34 +197,30 @@ const items = [
     route: '/announcementManager',
   },
 ]
+
+const scrollContainer = ref(null)
+const isAtBottom = ref(false)
+
+const handleScroll = () => {
+  const el = scrollContainer.value
+  if (!el) return
+  isAtBottom.value = el.scrollHeight - el.scrollTop === el.clientHeight
+}
+
+onMounted(() => {
+  scrollContainer.value?.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  scrollContainer.value?.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <div class="!flex !flex-col relative">
-    <!-- top button -->
-    <div v-show="showTopButton" class=" sticky top-0 z-10">
-      <div
-        class="!flex !cursor-pointer text-neutral-100 !items-center bg-neutral-700 !justify-center rounded-lg border-2 border-neutral-400 border-solid mb-3"
-        @mouseenter="startScrollUp"
-        @mouseleave="stopScroll"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6 !cursor-pointer"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-        </svg>
-      </div>
-    </div>
-
-    <!-- scrollable content -->
+  <div class="flex flex-col justify-center items-center">
     <div
       ref="scrollContainer"
-      class="!flex !flex-col max-h-[60vh] text-neutral-100 text-lg font-semibold overflow-y-auto"
+      class="!flex relative !flex-col items-center max-h-[70vh] text-neutral-100 text-lg font-semibold overflow-y-auto"
     >
       <!-- icons -->
       <div class="!flex !flex-col !gap-3" v-for="item in items" :key="item.label">
@@ -302,28 +236,14 @@ const items = [
         </router-link>
       </div>
     </div>
-
-    <!-- bottom button -->
-    <div v-show="showBottomButton" class=" sticky bottom-0 z-10">
-      <div
-        class="!flex !cursor-pointer text-neutral-100 !items-center bg-neutral-700 !justify-center rounded-lg border-2 border-neutral-400 border-solid mt-3"
-        @mouseenter="startScrollDown"
-        @mouseleave="stopScroll"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-        </svg>
+    <div class="h-10">
+      <div class="mt-3" v-if="items.length > 10 && !isAtBottom ">
+        <Arrowdown />
       </div>
     </div>
   </div>
 </template>
+
 <style scoped>
 .overflow-y-auto {
   scrollbar-width: none; /* برای فایرفاکس */
