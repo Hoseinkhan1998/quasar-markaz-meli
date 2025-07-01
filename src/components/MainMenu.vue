@@ -2,6 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Arrowdown from './Arrowdown.vue'
+import Arrowup from './Arrowup.vue'
 const route = useRoute()
 
 const items = [
@@ -200,27 +201,45 @@ const items = [
 
 const scrollContainer = ref(null)
 const isAtBottom = ref(false)
+const isAtTop = ref(true)
+const hasScroll = ref(false)
 
 const handleScroll = () => {
   const el = scrollContainer.value
   if (!el) return
-  isAtBottom.value = el.scrollHeight - el.scrollTop === el.clientHeight
+
+  const scrollTop = el.scrollTop
+  const scrollHeight = el.scrollHeight
+  const clientHeight = el.clientHeight
+
+  isAtTop.value = scrollTop === 0
+  isAtBottom.value = scrollTop + clientHeight >= scrollHeight
+  hasScroll.value = scrollHeight > clientHeight
 }
 
 onMounted(() => {
+  handleScroll() 
   scrollContainer.value?.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', handleScroll) 
 })
 
 onUnmounted(() => {
   scrollContainer.value?.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleScroll)
 })
+
 </script>
 
 <template>
   <div class="flex flex-col justify-center items-center">
+    <div class="h-10">
+      <div class="mb-3" v-show="hasScroll && !isAtTop">
+        <Arrowup />
+      </div>
+    </div>
     <div
       ref="scrollContainer"
-      class="!flex relative !flex-col items-center max-h-[70vh] text-neutral-100 text-lg font-semibold overflow-y-auto"
+      class="!flex relative !flex-col items-center max-h-[60vh] text-neutral-100 text-lg font-semibold overflow-y-auto"
     >
       <!-- icons -->
       <div class="!flex !flex-col !gap-3" v-for="item in items" :key="item.label">
@@ -237,7 +256,7 @@ onUnmounted(() => {
       </div>
     </div>
     <div class="h-10">
-      <div class="mt-3" v-if="items.length > 10 && !isAtBottom ">
+      <div class="mt-3" v-if="items.length > 8 && !isAtBottom">
         <Arrowdown />
       </div>
     </div>
@@ -246,10 +265,10 @@ onUnmounted(() => {
 
 <style scoped>
 .overflow-y-auto {
-  scrollbar-width: none; /* برای فایرفاکس */
+  scrollbar-width: none; 
 }
 
 .overflow-y-auto::-webkit-scrollbar {
-  display: none; /* برای کروم، سافاری و سایر مرورگرهای مبتنی بر Webkit */
+  display: none;
 }
 </style>
