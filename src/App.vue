@@ -8,23 +8,23 @@ const route = useRoute()
 
 <template>
   <div
-    class="grid grid-cols-12 gap-5 min-h-screen bg-cover justify-items-center items-center bg-center"
+    class="grid grid-cols-12 gap-5 min-h-screen bg-cover items-center bg-center"
     :class="`theme-${selectedTheme}`"
     :style="{ backgroundImage: `url(/images/homeposter.png)` }"
     dir="rtl"
   >
-    <div class="col-span-full">
+    <div class="col-span-10 col-start-2 2xl:px-[20vh] xl:px-[15vh] lg:px-[10vh] md:px-[1vh]">
       <div
         v-if="route.name !== 'login'"
-        class="w-[150vh] backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
+        class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
       >
         <div class="col-span-1 flex items-center justify-center">
           <MainMenu />
         </div>
-        <div class="col-span-11">
-          <div class="flex flex-col gap-5 mt-10">
+        <div class="col-span-11 h-full">
+          <div class="flex flex-col gap-5 mt-10 h-full">
             <!-- navbar -->
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between">              
               <div class="flex items-center gap-4">
                 <!-- icon -->
                 <svg
@@ -141,7 +141,7 @@ const route = useRoute()
                 </div>
               </div>
             </div>
-            <div>
+            <div class="flex-grow min-h-0 pb-10">
               <router-view></router-view>
             </div>
           </div>
