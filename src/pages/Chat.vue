@@ -43,36 +43,34 @@ const filteredChats = computed(() => {
   })
 })
 
-const selectedChatId = ref(null) // در ابتدا هیچ چتی انتخاب نشده است
+const selectedChatId = ref(null) 
 
 function selectChat(chatId) {
   selectedChatId.value = chatId
 }
 
-// آبجکت کامل چت انتخاب شده را برمی‌گرداند
 const selectedChat = computed(() => {
-  // اگر چتی انتخاب نشده بود، null برگردان تا خطا نگیریم
   if (selectedChatId.value === null) return null
   return chats.value.find((chat) => chat.id === selectedChatId.value)
 })
 
-// وضعیت نمایش پنل سوم (اطلاعات کاربر)
-const isThirdContentVisible = ref(false)
+const isDetailPanelVisible = ref(false)
+const isChatPanelShrunk = ref(false)  
 
-// تابعی برای نمایش پنل سوم
 function showThirdContent() {
-  // فقط در صورتی پنل را باز کن که یک چت انتخاب شده باشد
   if (selectedChat.value) {
-    isThirdContentVisible.value = true
+    isChatPanelShrunk.value = true
+    isDetailPanelVisible.value = true
   }
 }
 
-// تابعی برای بستن پنل سوم
 function hideThirdContent() {
-  isThirdContentVisible.value = false
+  isDetailPanelVisible.value = false 
+  setTimeout(() => {
+    isChatPanelShrunk.value = false 
+  }, 10) 
 }
 
-// با هر بار عوض شدن چت، پنل اطلاعات را ببند
 watch(selectedChatId, () => {
   hideThirdContent()
 })
@@ -232,8 +230,8 @@ watch(selectedChatId, () => {
         <div
           :class="[
             'bg-neutral-100 flex flex-col h-full rounded-lg transition-all duration-500 ease-in-out',
-            isThirdContentVisible ? 'col-span-6' : 'col-span-12',
-          ]"
+            isChatPanelShrunk  ? 'col-span-6' : 'col-span-12',
+          ]"          
         >
           <div
             class="rounded-t-lg text-primarymain w-full bg-tintone p-3 flex justify-between items-center"
@@ -308,30 +306,31 @@ watch(selectedChatId, () => {
           </div>
         </div>
         <!-- third content -->
-        <div
-          v-if="isThirdContentVisible"
-          class="col-span-6 bg-neutral-100 flex flex-col h-full rounded-lg p-4"
-        >
-          <div class="flex justify-between items-center">
-            <h3 class="font-bold text-primarymain">اطلاعات مخاطب</h3>
-            <!-- Close Button -->
-            <button @click="hideThirdContent" class="text-neutral-500 hover:text-primarymain">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="2.5"
-                stroke="currentColor"
-                class="size-6"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-            </button>
+        <transition name="fade">
+          <div
+            v-if="isDetailPanelVisible"
+            class="col-span-6 bg-neutral-100 flex flex-col h-full rounded-lg p-4"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-bold text-primarymain">اطلاعات مخاطب</h3>
+              <button @click="hideThirdContent" class="text-neutral-500 hover:text-primarymain">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="2.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-4">
+              <p>جزئیات مربوط به {{ selectedChat.name }} در اینجا نمایش داده می‌شود.</p>
+            </div>
           </div>
-          <div class="mt-4">
-            <p>جزئیات مربوط به {{ selectedChat.name }} در اینجا نمایش داده می‌شود.</p>
-          </div>
-        </div>
+        </transition>
       </div>
       <div v-else class="flex items-center justify-center h-full bg-neutral-100 rounded-lg">
         <p class="text-neutral-500">لطفا یک چت را برای شروع انتخاب کنید.</p>
@@ -343,5 +342,14 @@ watch(selectedChatId, () => {
 <style scoped>
 :deep(.q-btn-dropdown__arrow) {
   display: none;
+}
+
+.fade-enter-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
