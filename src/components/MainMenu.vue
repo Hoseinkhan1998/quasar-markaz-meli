@@ -7,7 +7,7 @@ const route = useRoute()
 
 const items = [
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M10 15V12.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <path
           d="M17.2001 16.0333C17.0001 17.2083 15.8584 18.175 14.6667 18.175H5.33339C4.13339 18.175 3.00006 17.2166 2.80006 16.0333L1.69172 9.39998C1.55006 8.58331 1.96672 7.49164 2.61672 6.97498L8.39172 2.34998C9.27506 1.64164 10.7167 1.64164 11.6084 2.35831L17.3834 6.97498C18.0251 7.49164 18.4417 8.58331 18.3084 9.39998L17.7917 12.5"
@@ -21,7 +21,7 @@ const items = [
   },
 
   {
-    icon: `<svg class="size-6" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4497 9.3442C11.4497 8.88396 11.8228 8.51086 12.283 8.51086H12.2905C12.7508 8.51086 13.1239 8.88396 13.1239 9.3442C13.1239 9.80444 12.7508 10.1775 12.2905 10.1775H12.283C11.8228 10.1775 11.4497 9.80444 11.4497 9.3442Z" fill="white"/>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M8.10889 9.3442C8.10889 8.88396 8.48198 8.51086 8.94222 8.51086H8.94972C9.40996 8.51086 9.78305 8.88396 9.78305 9.3442C9.78305 9.80444 9.40996 10.1775 8.94972 10.1775H8.94222C8.48198 10.1775 8.10889 9.80444 8.10889 9.3442Z" fill="white"/>
     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.76782 9.3442C4.76782 8.88396 5.14092 8.51086 5.60116 8.51086H5.60866C6.06889 8.51086 6.44199 8.88396 6.44199 9.3442C6.44199 9.80444 6.06889 10.1775 5.60866 10.1775H5.60116C5.14092 10.1775 4.76782 9.80444 4.76782 9.3442Z" fill="white"/>
@@ -32,7 +32,7 @@ const items = [
     route: '/chat',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M20 15.25V13C20 8.02944 15.9706 4 11 4C6.02944 4 2 8.02944 2 13H14" stroke="white"/>
       <path d="M6 15H19.5C20.3284 15 21 15.6716 21 16.5V16.5C21 17.3284 20.3284 18 19.5 18H2.5C1.67157 18 1 17.3284 1 16.5V16C1 15.4477 1.44772 15 2 15V15M4 15H2M2 13V15" stroke="white"/>
       <path d="M20 13H16" stroke="white"/>
@@ -43,7 +43,7 @@ const items = [
     route: '/foodmanagment',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M9.16675 16.25H17.5001" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M16.6667 10.4166H17.5001" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M9.16675 10.4166H13.7417" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,7 +56,7 @@ const items = [
     route: '/tasks',
   },
   {
-    icon: `<svg class="size-6" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M1.66675 15.7084V13.4584C1.66675 11.5834 2.41675 10.8334 4.29175 10.8334H6.54175C8.41675 10.8334 9.16675 11.5834 9.16675 13.4584V15.7084C9.16675 17.5834 8.41675 18.3334 6.54175 18.3334H4.29175" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M18.3333 12.5C18.3333 15.725 15.725 18.3333 12.5 18.3333L13.375 16.875" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M1.66675 7.49996C1.66675 4.27496 4.27508 1.66663 7.50008 1.66663L6.62508 3.12496" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -67,7 +67,7 @@ const items = [
   },
 
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6.66675 1.66663V4.16663" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M13.3333 1.66663V4.16663" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M2.91675 7.57495H17.0834" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -84,7 +84,7 @@ const items = [
     route: '/calendar',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12.0834 12.8667H7.91675" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M10 10.8334V15" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M10 18.3334H6.75C6.55 18.3334 6.35 18.3167 6.15833 18.2917C3.50833 18.1167 2.09167 16.7001 1.91667 14.0501C1.89167 13.8584 1.875 13.6584 1.875 13.4584V11.8334C1.875 10.1584 2.89167 8.71672 4.34167 8.09172C4.84167 7.88339 5.375 7.76672 5.94167 7.76672H14.075C14.4833 7.76672 14.8833 7.82506 15.25 7.93339C16.9167 8.43339 18.1333 9.99172 18.1333 11.8251V13.4501C18.1333 13.6167 18.125 13.7834 18.1167 13.9501C17.9583 16.8667 16.3333 18.3334 13.25 18.3334" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -98,7 +98,7 @@ const items = [
     route: '/salary',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_496_1522)">
           <path d="M2.48483 7.21865L2.9628 6.22303C3.02212 6.09922 3.00348 5.95134 2.91365 5.84645L2.0306 4.81473C1.91195 4.67716 1.92043 4.4691 2.05094 4.34185L4.1967 2.22509C4.32212 2.10129 4.51873 2.09441 4.65263 2.20962L5.70178 3.1141C5.80009 3.19836 5.93568 3.21899 6.05263 3.16912L7.67297 2.47615C7.79839 2.42284 7.87975 2.29732 7.87975 2.15975V0.859778C7.87975 0.670628 8.03229 0.515869 8.21873 0.515869H11.3628C11.5492 0.515869 11.7018 0.670628 11.7018 0.859778V2.14256C11.7018 2.27496 11.7764 2.39533 11.895 2.45207L13.5662 3.2637C13.695 3.3256 13.8475 3.29981 13.9492 3.19836L14.9679 2.18555C15.1001 2.05314 15.3136 2.05486 15.4442 2.18726L17.6611 4.43643C17.7916 4.56883 17.7933 4.78377 17.6645 4.9179L16.8323 5.79143C16.7374 5.89116 16.7103 6.03732 16.7628 6.16285L17.5408 8.04059C17.5933 8.16783 17.717 8.25037 17.8526 8.25037H19.1492C19.3357 8.25037 19.4882 8.40513 19.4882 8.59428V11.6963C19.4882 11.8855 19.3357 12.0402 19.1492 12.0402H17.9153C17.7831 12.0402 17.6628 12.1176 17.6086 12.2397L16.7747 14.0624C16.7153 14.1931 16.7425 14.3479 16.8425 14.451L17.8052 15.4277C17.9374 15.5619 17.9374 15.7802 17.8052 15.9144L15.6238 18.1274C15.4967 18.2564 15.2933 18.2615 15.1594 18.1429L14.0984 17.1937C13.9984 17.1043 13.8543 17.0819 13.7323 17.1387L13.0814 17.4413" stroke="white" stroke-miterlimit="10"/>
           <path d="M5.31689 7.24098C6.25249 5.65556 7.96096 4.5946 9.9152 4.5946C12.8711 4.5946 15.2694 7.02604 15.2694 10.0266C15.2694 11.9732 14.2593 13.6807 12.744 14.6402" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
@@ -111,7 +111,7 @@ const items = [
           </g>
           <defs>
           <clipPath id="clip0_496_1522">
-          <rect class="size-6" fill="white"/>
+          <rect class="size-5" fill="white"/>
           </clipPath>
           </defs>
           </svg>`,
@@ -119,7 +119,7 @@ const items = [
     route: '/efficiency',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M5.83341 6.66663H3.33341C2.41675 6.66663 1.66675 5.91663 1.66675 4.99996V3.33329C1.66675 2.41663 2.41675 1.66663 3.33341 1.66663H5.83341C6.75008 1.66663 7.50008 2.41663 7.50008 3.33329V4.99996C7.50008 5.91663 6.75008 6.66663 5.83341 6.66663Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M17.3333 5.83333H14.3332C13.7832 5.83333 13.3333 5.38332 13.3333 4.83332V3.50001C13.3333 2.95001 13.7832 2.5 14.3332 2.5H17.3333C17.8833 2.5 18.3333 2.95001 18.3333 3.50001V4.83332C18.3333 5.38332 17.8833 5.83333 17.3333 5.83333Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M17.3333 12.0833H14.3332C13.7832 12.0833 13.3333 11.6333 13.3333 11.0833V9.75001C13.3333 9.20001 13.7832 8.75 14.3332 8.75H17.3333C17.8833 8.75 18.3333 9.20001 18.3333 9.75001V11.0833C18.3333 11.6333 17.8833 12.0833 17.3333 12.0833Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -134,7 +134,7 @@ const items = [
     route: '/programs',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_496_1550)">
       <path d="M19.1667 18.3333H4.16667C3.50363 18.3333 2.86774 18.0699 2.3989 17.6011C1.93006 17.1323 1.66667 16.4964 1.66667 15.8333V0.833333C1.66667 0.61232 1.57887 0.400358 1.42259 0.244078C1.26631 0.0877974 1.05435 0 0.833333 0C0.61232 0 0.400358 0.0877974 0.244078 0.244078C0.0877974 0.400358 0 0.61232 0 0.833333L0 15.8333C0.00132321 16.938 0.440735 17.997 1.22185 18.7782C2.00296 19.5593 3.062 19.9987 4.16667 20H19.1667C19.3877 20 19.5996 19.9122 19.7559 19.7559C19.9122 19.5996 20 19.3877 20 19.1667C20 18.9457 19.9122 18.7337 19.7559 18.5774C19.5996 18.4211 19.3877 18.3333 19.1667 18.3333Z" fill="#F0EFFF"/>
       <path d="M5.00008 16.6666C5.22109 16.6666 5.43305 16.5788 5.58933 16.4225C5.74561 16.2663 5.83341 16.0543 5.83341 15.8333V9.99996C5.83341 9.77895 5.74561 9.56698 5.58933 9.4107C5.43305 9.25442 5.22109 9.16663 5.00008 9.16663C4.77907 9.16663 4.56711 9.25442 4.41083 9.4107C4.25455 9.56698 4.16675 9.77895 4.16675 9.99996V15.8333C4.16675 16.0543 4.25455 16.2663 4.41083 16.4225C4.56711 16.5788 4.77907 16.6666 5.00008 16.6666Z" fill="#F0EFFF"/>
@@ -145,7 +145,7 @@ const items = [
       </g>
       <defs>
       <clipPath id="clip0_496_1550">
-      <rect class="size-6" fill="white"/>
+      <rect class="size-5" fill="white"/>
       </clipPath>
       </defs>
       </svg>
@@ -155,7 +155,7 @@ const items = [
     route: '/report',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M18.3333 4.99996V7.01662C18.3333 8.33329 17.4999 9.16663 16.1833 9.16663H13.3333V3.34162C13.3333 2.41662 14.0916 1.66663 15.0166 1.66663C15.9249 1.67496 16.7583 2.04162 17.3583 2.64162C17.9583 3.24996 18.3333 4.08329 18.3333 4.99996Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M9.1416 7.52506L9.77493 6.89172" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M5.2251 11.4416L7.0751 9.59162L7.5001 9.16663" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -167,7 +167,7 @@ const items = [
     route: '/allocations',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4.79993 7.34167L3.7916 8.35001C1.8416 10.3 1.8416 13.4667 3.7916 15.425" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M10.2749 10.1251L8.21658 12.1834C7.07492 13.3251 7.07492 15.1667 8.21658 16.3084C9.35825 17.4501 11.1999 17.4501 12.3416 16.3084L15.5833 13.0667C17.8583 10.7917 17.8583 7.09172 15.5833 4.81672C13.3083 2.54172 9.60825 2.54172 7.33325 4.81672" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -176,7 +176,7 @@ const items = [
     route: '/contracts',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M3.2749 13.2334L13.2332 3.27502" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M9.25 15.2333L10.25 14.2333" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M11.4917 12.9917L13.4834 11" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -187,7 +187,7 @@ const items = [
     route: '/payment',
   },
   {
-    icon: `<svg class="size-6" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    icon: `<svg class="size-5" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 17.7083C15.7808 17.7083 17.7083 15.7808 17.7083 10" stroke="#F0EFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M10.0001 2.29163C4.21925 2.29163 2.29175 4.21913 2.29175 9.99996C2.29175 14.6275 3.52675 16.7858 6.98508 17.4625" stroke="#F0EFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2743 3.58661V3.58661C15.4468 2.85411 14.1827 2.93078 13.4502 3.75828C13.4502 3.75828 9.80934 7.87078 8.54684 9.29828C7.28267 10.7249 8.20934 12.6958 8.20934 12.6958C8.20934 12.6958 10.296 13.3566 11.541 11.9499C12.7868 10.5433 16.446 6.41078 16.446 6.41078C17.1785 5.58328 17.101 4.31911 16.2743 3.58661Z" stroke="#F0EFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -244,12 +244,11 @@ onUnmounted(() => {
       <!-- icons -->
       <div class="!flex !flex-col !gap-3" v-for="item in items" :key="item.label">
         <router-link
-          :to="item.route"
-          :class="[item.route === route.path ? ' text-red-700' : '']"
-          class="cursor-pointer mt-3"
+          :to="item.route"          
+          class="cursor-pointer mt-5"
         >
-          <div class="!flex !flex-col justify-center items-center gap-3">
-            <span v-html="item.icon"></span>
+          <div class="!flex !flex-col justify-center items-center gap-2">
+            <span :class="[item.route === route.path ? ' bg-[#eeeeee83] px-4 py-1 rounded-2xl' : '']" v-html="item.icon"></span>
             <p class="text-xs">{{ item.label }}</p>
           </div>
         </router-link>

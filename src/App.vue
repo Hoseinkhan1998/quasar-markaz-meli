@@ -1,6 +1,8 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import MainMenu from './components/MainMenu.vue'
 
+const route = useRoute()
 // import { ref } from 'vue'
 </script>
 
@@ -13,6 +15,7 @@ import MainMenu from './components/MainMenu.vue'
   >
     <div class="col-span-full">
       <div
+        v-if="route.name !== 'login'"
         class="w-[150vh] backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
       >
         <div class="col-span-1 flex items-center justify-center">
@@ -70,7 +73,7 @@ import MainMenu from './components/MainMenu.vue'
                     viewBox="0 0 24 24"
                     stroke-width="1.5"
                     stroke="currentColor"
-                    class="size-8"
+                    class="size-7 cursor-pointer"
                   >
                     <path
                       stroke-linecap="round"
@@ -82,7 +85,7 @@ import MainMenu from './components/MainMenu.vue'
                 <!-- app icon -->
                 <div>
                   <svg
-                    class="size-8"
+                    class="size-7 cursor-pointer"
                     viewBox="0 0 32 32"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +137,7 @@ import MainMenu from './components/MainMenu.vue'
                 </div>
                 <!-- prfile -->
                 <div>
-                  <img src="/images/hosein.jpg" class=" size-8 rounded-full"  alt="">
+                  <img src="/images/hosein.jpg" class="size-7 cursor-pointer rounded-full" alt="" />
                 </div>
               </div>
             </div>
@@ -143,6 +146,9 @@ import MainMenu from './components/MainMenu.vue'
             </div>
           </div>
         </div>
+      </div>
+      <div v-else>
+        <router-view></router-view>
       </div>
     </div>
   </div>

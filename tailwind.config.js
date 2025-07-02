@@ -7,7 +7,9 @@ module.exports = {
     extend: {
       colors: {
         primarymain: 'var(--color-primarymain)',
-        secondarymain: 'var(--color-secondarymain)',
+        tintone: 'var(--color-tintone)',
+        navbarselect: 'var(--color-navbarselect)',
+        tinttwo: 'var(--color-tinttwo)',
       },
     },
   },

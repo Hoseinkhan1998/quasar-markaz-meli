@@ -5,26 +5,34 @@
 @layer base {
   :root {
     --color-primarymain: #5a1414;
-    --color-secondarymain: #792a2a;
+    --color-tintone: #fcf2f2;
+    --color-navbarselect: #6a3c3b;
+    --color-tinttwo: #f2c6c6;
   }
 }
 
 .theme-spring {
   --color-primarymain: #5a1414;
-  --color-secondarymain: #792a2a;
+  --color-tintone: #fcf2f2;
+  --color-navbarselect: #6a3c3b;
+  --color-tinttwo: #f2c6c6;
 }
 
 .theme-haram {
-  --color-primarymain: #1da873;
-  --color-secondarymain: #23855fe1;
+  --color-primarymain: #5a1414;
+  --color-tintone: #fcf2f2;
+  --color-navbarselect: #6a3c3b;
+  --color-tinttwo: #f2c6c6;
 }
 .theme-sky {
-  --color-primarymain: #159bc4;
-  --color-secondarymain: #42bee4;
+  --color-primarymain: #5a1414;
+  --color-tintone: #fcf2f2;
+  --color-navbarselect: #6a3c3b;
+  --color-tinttwo: #f2c6c6;
 }
 .theme-red {
-  --color-primarymain: #d4302b;
-  --color-secondarymain: #c54d49;
+  --color-primarymain: #5a1414;
+  --color-tintone: #fcf2f2;
+  --color-navbarselect: #6a3c3b;
+  --color-tinttwo: #f2c6c6;
 }
-
-
