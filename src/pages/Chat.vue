@@ -143,7 +143,7 @@ watch(selectedChatId, () => {
           </div>
         </div>
         <!-- favorite chats -->
-        <div class="overflow-y-auto h-lg:h-[50vh] h-md:h-[48vh] h-sm:h-[40vh]">
+        <div class="overflow-y-auto h-lg:h-[50vh] h-md:h-[48vh] h-sm:h-[40vh] h-xs:h-[30vh]">
           <div v-for="chat in filteredChats" :key="chat.id" class="flex flex-col gap-4 mt-3">
             <div
               @click="selectChat(chat.id)"
@@ -328,7 +328,7 @@ watch(selectedChatId, () => {
           </div>
           <!-- chat messages -->
           <div
-            class="mt-4 relative overflow-y-auto h-lg:h-[calc(50vh-20px)] h-md:h-[calc(48vh-20px)] h-sm:h-[calc(40vh-20px)]"
+            class="mt-4 relative overflow-y-auto h-lg:h-[calc(50vh-20px)] h-md:h-[calc(48vh-20px)] h-sm:h-[calc(40vh-20px)] h-xs:h-[calc(30vh-20px)]"
           >
             <div class="flex flex-col gap-2 px-3">
               <!-- other message -->

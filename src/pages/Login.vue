@@ -12,7 +12,7 @@ const togglePasswordVisibility = () => {
 </script>
 <template>
   <div
-    class="flex flex-col backdrop-blur-xl px-5 pt-10 pb-5 justify-center border-[0.1px] border-gray-700 border-solid items-center rounded-lg"
+    class="flex flex-col backdrop-blur-xl px-5 pt-10 pb-5 justify-center border-[0.1px] border-gray-700 border-solid items-center rounded-2xl"
   >
     <!-- icon -->
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ const togglePasswordVisibility = () => {
     <p class="text-neutral-100 text-xl font-semibold mt-5">شورای عالی فضای مجازی</p>
     <p class="text-neutral-100 font-semibold mt-2">مرکز ملی فضای مجازی</p>
     <!-- form -->
-    <div class="flex flex-col bg-neutral-100 rounded-lg p-5 w-[60vh] mt-10 gap-4">
+    <div class="flex flex-col bg-neutral-100 rounded-lg p-5 w-[50vh] mt-10 gap-4">
       <p class="text-lg font-semibold">صفحه ورود به پرتال فضای مجازی</p>
       <q-input outlined v-model="ph" placeholder="نام کاربری" :dense="dense" />
       <q-input

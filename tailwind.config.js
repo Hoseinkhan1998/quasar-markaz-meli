@@ -8,6 +8,7 @@ module.exports = {
     // پلاگین برای افزودن breakpoint های ارتفاع
     plugin(function ({ addVariant }) {
       // برای موبایل در حالت افقی (landscape) که ارتفاع کم است
+      addVariant('h-xs', '@media (min-height: 300px)')
       addVariant('h-sm', '@media (min-height: 600px)')
 
       // برای تبلت‌ها و لپ‌تاپ‌های کوچک

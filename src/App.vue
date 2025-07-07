@@ -13,18 +13,18 @@ const route = useRoute()
     :style="{ backgroundImage: `url(/images/homeposter.png)` }"
     dir="rtl"
   >
-    <div class="col-span-full 2xl:px-[40vh] xl:px-[15vh] lg:px-[10vh] md:px-[1vh]">
+    <div v-if="route.name !== 'login'" class="col-span-full 2xl:px-[40vh] xl:px-[30vh] lg:px-[20vh] md:px-[10vh] sm:px-[5vh]">
       <div
-        v-if="route.name !== 'login'"
+        
         class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
       >
         <div class="col-span-1 flex items-center justify-center">
           <MainMenu />
         </div>
         <div class="col-span-11 h-full">
-          <div class="flex flex-col gap-5 mt-10 h-full">
+          <div class="flex flex-col gap-5 mt-5 h-full">
             <!-- navbar -->
-            <div class="flex items-center justify-between">              
+            <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
                 <!-- icon -->
                 <svg
@@ -147,9 +147,9 @@ const route = useRoute()
           </div>
         </div>
       </div>
-      <div v-else>
-        <router-view></router-view>
-      </div>
+    </div>
+    <div class=" col-span-full flex justify-center items-center" v-else>
+      <router-view></router-view>
     </div>
   </div>
 </template>
