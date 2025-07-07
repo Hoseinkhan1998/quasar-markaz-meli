@@ -13,7 +13,7 @@ const route = useRoute()
     :style="{ backgroundImage: `url(/images/homeposter.png)` }"
     dir="rtl"
   >
-    <div class="col-span-10 col-start-2 2xl:px-[20vh] xl:px-[15vh] lg:px-[10vh] md:px-[1vh]">
+    <div class="col-span-full 2xl:px-[40vh] xl:px-[15vh] lg:px-[10vh] md:px-[1vh]">
       <div
         v-if="route.name !== 'login'"
         class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
@@ -141,7 +141,7 @@ const route = useRoute()
                 </div>
               </div>
             </div>
-            <div class="flex-grow min-h-0 pb-10">
+            <div class="flex-grow min-h-[50vh] max-h-[30vh] pb-10">
               <router-view></router-view>
             </div>
           </div>
