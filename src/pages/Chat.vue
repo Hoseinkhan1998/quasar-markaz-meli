@@ -440,7 +440,7 @@ watch(selectedChatId, () => {
   opacity: 0;
 }
 
-/* .overflow-y-auto::-webkit-scrollbar {
+.overflow-y-auto::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -459,5 +459,5 @@ watch(selectedChatId, () => {
 
 .overflow-y-auto {
   min-height: 0;
-} */
+}
 </style>
