@@ -1,6 +1,9 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import MainMenu from './components/MainMenu.vue'
+import Notif from './components/HomePageNavbar/Notif.vue'
+import Appicon from './components/HomePageNavbar/Appicon.vue'
+import Profile from './components/HomePageNavbar/Profile.vue'
 
 const route = useRoute()
 // import { ref } from 'vue'
@@ -14,10 +17,7 @@ const route = useRoute()
     dir="rtl"
   >
     <div v-if="route.name !== 'login'" class="col-span-full 2xl:px-[40vh] xl:px-[30vh] lg:px-[20vh] md:px-[10vh] sm:px-[5vh]">
-      <div
-        
-        class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
-      >
+      <div class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12">
         <div class="col-span-1 flex items-center justify-center">
           <MainMenu />
         </div>
@@ -27,22 +27,8 @@ const route = useRoute()
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
                 <!-- icon -->
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_1_4777"
-                    style="mask-type: alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="3"
-                    y="4"
-                    width="41"
-                    height="40"
-                  >
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_1_4777" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="3" y="4" width="41" height="40">
                     <path
                       d="M43.4133 28.7967C43.3396 29.0945 43.2581 29.3905 43.1743 29.6829C40.1628 39.8606 29.6101 45.9849 19.2026 43.4139C8.79512 40.8428 2.30901 30.509 4.38353 20.0996C4.44555 19.8017 4.51119 19.5016 4.58497 19.2038C7.22984 8.49878 18.0904 1.94179 28.7957 4.58658C39.501 7.23092 46.0582 18.0912 43.4133 28.7967Z"
                       fill="#12702A"
@@ -66,79 +52,11 @@ const route = useRoute()
               </div>
               <div class="flex items-center gap-5 text-neutral-100">
                 <!-- notif icon -->
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="currentColor"
-                    class="size-7 cursor-pointer"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
-                    />
-                  </svg>
-                </div>
+                <Notif />
                 <!-- app icon -->
-                <div>
-                  <svg
-                    class="size-7 cursor-pointer"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_1_4783)">
-                      <path
-                        d="M14 6C14 7.10457 14.8954 8 16 8C17.1046 8 18 7.10457 18 6C18 4.89543 17.1046 4 16 4C14.8954 4 14 4.89543 14 6Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M4 6C4 7.10457 4.89543 8 6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M24 6C24 7.10457 24.8954 8 26 8C27.1046 8 28 7.10457 28 6C28 4.89543 27.1046 4 26 4C24.8954 4 24 4.89543 24 6Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M14 16C14 17.1046 14.8954 18 16 18C17.1046 18 18 17.1046 18 16C18 14.8954 17.1046 14 16 14C14.8954 14 14 14.8954 14 16Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M4 16C4 17.1046 4.89543 18 6 18C7.10457 18 8 17.1046 8 16C8 14.8954 7.10457 14 6 14C4.89543 14 4 14.8954 4 16Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M24 16C24 17.1046 24.8954 18 26 18C27.1046 18 28 17.1046 28 16C28 14.8954 27.1046 14 26 14C24.8954 14 24 14.8954 24 16Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M14 26C14 27.1046 14.8954 28 16 28C17.1046 28 18 27.1046 18 26C18 24.8954 17.1046 24 16 24C14.8954 24 14 24.8954 14 26Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M4 26C4 27.1046 4.89543 28 6 28C7.10457 28 8 27.1046 8 26C8 24.8954 7.10457 24 6 24C4.89543 24 4 24.8954 4 26Z"
-                        fill="white"
-                      />
-                      <path
-                        d="M24 26C24 27.1046 24.8954 28 26 28C27.1046 28 28 27.1046 28 26C28 24.8954 27.1046 24 26 24C24.8954 24 24 24.8954 24 26Z"
-                        fill="white"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_1_4783">
-                        <rect width="32" height="32" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
+                <Appicon />
                 <!-- prfile -->
-                <div>
-                  <img src="/images/hosein.jpg" class="size-7 cursor-pointer rounded-full" alt="" />
-                </div>
+                <Profile />
               </div>
             </div>
             <div class="flex-grow min-h-[50vh] max-h-[30vh] pb-10">
@@ -148,7 +66,7 @@ const route = useRoute()
         </div>
       </div>
     </div>
-    <div class=" col-span-full flex justify-center items-center" v-else>
+    <div class="col-span-full flex justify-center items-center" v-else>
       <router-view></router-view>
     </div>
   </div>
