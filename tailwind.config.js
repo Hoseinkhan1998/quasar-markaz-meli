@@ -20,6 +20,7 @@ module.exports = {
       // برای مانیتورهای Full HD (مانند مانیتور ۲۴ اینچ شما)
       addVariant('h-xl', '@media (min-height: 1080px)')
     }),
+    require('daisyui'),
   ],
 
   theme: {

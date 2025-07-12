@@ -1,9 +1,9 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import MainMenu from './components/MainMenu.vue'
-import Notif from './components/HomePage/Notif.vue';
-import AppIcon from './components/HomePage/AppIcon.vue';
-import Profile from './components/HomePage/Profile.vue';
+import Notif from './components/HomePageNavbar/Notif.vue'
+import Appicon from './components/HomePageNavbar/Appicon.vue'
+import Profile from './components/HomePageNavbar/Profile.vue'
 
 const route = useRoute()
 // import { ref } from 'vue'
@@ -17,10 +17,7 @@ const route = useRoute()
     dir="rtl"
   >
     <div v-if="route.name !== 'login'" class="col-span-full 2xl:px-[40vh] xl:px-[30vh] lg:px-[20vh] md:px-[10vh] sm:px-[5vh]">
-      <div
-        
-        class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12"
-      >
+      <div class="backdrop-blur-2xl rounded-2xl border-[0.5px] h-[80vh] border-gray-600 border-solid p-5 grid grid-cols-12">
         <div class="col-span-1 flex items-center justify-center">
           <MainMenu />
         </div>
@@ -30,22 +27,8 @@ const route = useRoute()
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-4">
                 <!-- icon -->
-                <svg
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <mask
-                    id="mask0_1_4777"
-                    style="mask-type: alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="3"
-                    y="4"
-                    width="41"
-                    height="40"
-                  >
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <mask id="mask0_1_4777" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="3" y="4" width="41" height="40">
                     <path
                       d="M43.4133 28.7967C43.3396 29.0945 43.2581 29.3905 43.1743 29.6829C40.1628 39.8606 29.6101 45.9849 19.2026 43.4139C8.79512 40.8428 2.30901 30.509 4.38353 20.0996C4.44555 19.8017 4.51119 19.5016 4.58497 19.2038C7.22984 8.49878 18.0904 1.94179 28.7957 4.58658C39.501 7.23092 46.0582 18.0912 43.4133 28.7967Z"
                       fill="#12702A"
@@ -71,8 +54,8 @@ const route = useRoute()
                 <!-- notif icon -->
                 <Notif />
                 <!-- app icon -->
-                <AppIcon />
-                <!-- profile -->
+                <Appicon />
+                <!-- prfile -->
                 <Profile />
               </div>
             </div>
@@ -83,7 +66,7 @@ const route = useRoute()
         </div>
       </div>
     </div>
-    <div class=" col-span-full flex justify-center items-center" v-else>
+    <div class="col-span-full flex justify-center items-center" v-else>
       <router-view></router-view>
     </div>
   </div>

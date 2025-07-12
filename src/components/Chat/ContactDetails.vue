@@ -18,22 +18,15 @@ const emit = defineEmits(['close'])
       <h3 class="font-bold text-primarymain">جزئیات مخاطب</h3>
       <!-- Close Button -->
       <button @click="emit('close')" class="text-primarymain">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="2.5"
-          stroke="currentColor"
-          class="size-6"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+          class="size-6">
+
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
       </button>
     </div>
     <!-- Profile Info -->
-    <div
-      class="mt-4 overflow-y-auto h-lg:h-[calc(50vh+50px)] h-md:h-[calc(48vh+50px)] h-sm:h-[calc(40vh+50px)] pb-5"
-    >
+    <div class="mt-4 overflow-y-auto h-lg:h-[calc(50vh+50px)] h-md:h-[calc(48vh+50px)] h-sm:h-[calc(40vh+50px)] pb-5">
       <div class="flex flex-col items-center">
         <div class="flex flex-col items-center mt-8">
           <img :src="contact.avatar" class="rounded-full w-28 h-28 object-cover" />
