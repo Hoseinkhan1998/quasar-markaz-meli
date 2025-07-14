@@ -1,8 +1,7 @@
 <script setup></script>
 <template>
-  <div class="dropdown dropdown-bottom dropdown-end">
-    <div tabindex="0" role="button" class="">
-      <svg class="size-7 cursor-pointer" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div>
+     <svg class="size-7 cursor-pointer" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clip-path="url(#clip0_1_4783)">
           <path d="M14 6C14 7.10457 14.8954 8 16 8C17.1046 8 18 7.10457 18 6C18 4.89543 17.1046 4 16 4C14.8954 4 14 4.89543 14 6Z" fill="white" />
           <path d="M4 6C4 7.10457 4.89543 8 6 8C7.10457 8 8 7.10457 8 6C8 4.89543 7.10457 4 6 4C4.89543 4 4 4.89543 4 6Z" fill="white" />
@@ -20,21 +19,6 @@
           </clipPath>
         </defs>
       </svg>
-    </div>
-    <ul tabindex="0" class="dropdown-content text-primarymain flex flex-col w-[35vh] mt-5 rounded-3xl z-30 p-2 -me-14 bg-tintone">
-      <!-- close button -->
-      <div class="flex justify-end">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>        
-      </div>
-      <!-- profile pic -->
-      <div class=" flex items-center justify-center w-full flex-col gap-2 mt-3">
-        <img src="/images/chat2.jpg" class=" w-[102px] h-[102px] rounded-full" alt="">
-        <p class=" font-semibold text-lg">هادی احدی</p>
-        <p class=" text-sm">مدیر اداره برنامه ریزی</p>
-      </div>
-    </ul>
   </div>
 </template>
 

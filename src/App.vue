@@ -2,8 +2,9 @@
 import { useRoute } from 'vue-router'
 import MainMenu from './components/MainMenu.vue'
 import Notif from './components/HomePageNavbar/Notif.vue'
-import Appicon from './components/HomePageNavbar/Appicon.vue'
+import AppIcon from './components/HomePageNavbar/Appicon.vue'
 import Profile from './components/HomePageNavbar/Profile.vue'
+
 
 const route = useRoute()
 // import { ref } from 'vue'
@@ -54,7 +55,7 @@ const route = useRoute()
                 <!-- notif icon -->
                 <Notif />
                 <!-- app icon -->
-                <Appicon />
+                <AppIcon />
                 <!-- prfile -->
                 <Profile />
               </div>
